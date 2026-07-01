@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мясо Розница — Свежая свинина в Омске</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #0d0d0d;
+            color: #f5f0eb;
+            line-height: 1.6;
+        }
+        /* Шапка с мясным фоном */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.75), rgba(30,10,0,0.9)), url('https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            padding: 80px 20px;
+            text-align: center;
+            border-bottom: 4px solid #b8860b;
+        }
+        .hero h1 {
+            font-family: 'Roboto Slab', serif;
+            font-size: 58px;
+            letter-spacing: 2px;
+            color: #ffd700;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.8);
+        }
+        .hero p {
+            font-size: 22px;
+            margin: 20px 0 30px;
+            font-weight: 300;
+            color: #ccc;
+        }
+        .hero .tagline {
+            background: rgba(184, 134, 11, 0.2);
+            display: inline-block;
+            padding: 8px 25px;
+            border-radius: 30px;
+            font-size: 18px;
+            border: 1px solid #b8860b;
+            margin-bottom: 25px;
+            color: #ffd700;
+        }
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            text-decoration: none;
+            padding: 16px 45px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 18px;
+            transition: 0.3s;
+            display: inline-block;
+            letter-spacing: 1px;
+        }
+        .btn-phone {
+            background: #b8860b;
+            color: #0d0d0d;
+        }
+        .btn-phone:hover {
+            background: #daa520;
+            transform: scale(1.05);
+            box-shadow: 0 0 25px #b8860b;
+        }
+        .btn-wa {
+            background: #25D366;
+            color: #0d0d0d;
+        }
+        .btn-wa:hover {
+            background: #1ebe5c;
+            transform: scale(1.05);
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .section-title {
+            font-family: 'Roboto Slab', serif;
+            font-size: 38px;
+            text-align: center;
+            margin-bottom: 15px;
+            color: #ffd700;
+        }
+        .section-sub {
+            text-align: center;
+            color: #aaa;
+            font-size: 18px;
+            margin-bottom: 50px;
+        }
+
+        /* Сетка товаров */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+        }
+        .card {
+            background: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            border-radius: 16px;
+            padding: 25px 15px;
+            text-align: center;
+            transition: 0.3s;
+            border-bottom: 3px solid #b8860b;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: #daa520;
+            box-shadow: 0 10px 30px rgba(184, 134, 11, 0.2);
+        }
+        .card h3 {
+            font-size: 20px;
+            font-weight: 400;
+            margin-bottom: 12px;
+            color: #fff;
+        }
+        .card .price {
+            font-family: 'Roboto Slab', serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: #ffd700;
+            margin: 5px 0 10px;
+        }
+        .card .price small {
+            font-size: 16px;
+            font-weight: 300;
+            color: #888;
+        }
+        .badge {
+            display: inline-block;
+            background: #b8860b;
+            color: #0d0d0d;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px;
+            letter-spacing: 1px;
+        }
+
+        /* Преимущества */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .feature-item {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #2a2a2a;
+            border-radius: 16px;
+            background: #141414;
+        }
+        .feature-item .icon {
+            font-size: 48px;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .feature-item h4 {
+            color: #ffd700;
+            margin-bottom: 5px;
+        }
+        .feature-item p {
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        /* Футер */
+        footer {
+            background: #050505;
+            border-top: 2px solid #1a1a1a;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        footer .phone-big {
+            font-size: 32px;
+            font-family: 'Roboto Slab', serif;
+            color: #ffd700;
+            text-decoration: none;
+        }
+        footer p {
+            color: #666;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 36px; }
+            .btn { padding: 14px 30px; font-size: 16px; }
+            .grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="tagline">🥩 БЕЗ ХИМИИ И АНТИБИОТИКОВ</div>
+    <h1>Мясо Розница</h1>
+    <p>Свежая свинина фермерского качества с доставкой по Омску</p>
+    <div class="btn-group">
+        <a href="tel:+79136223077" class="btn btn-phone">📞 Позвонить</a>
+        <a href="https://wa.me/79136223077" class="btn btn-wa">✉️ Написать в WhatsApp</a>
+    </div>
+</div>
+
+<div class="container">
+    <h2 class="section-title">🔥 Прайс на мясо</h2>
+    <p class="section-sub">Говядина, свинина и копчености — всё в одном месте</p>
+    <div class="grid">
+        <div class="card"><h3>Кости суповые</h3><div class="price">80 <small>₽</small></div></div>
+        <div class="card"><h3>Рулька</h3><div class="price">90 <small>₽</small></div></div>
+        <div class="card"><h3>Шея</h3><div class="price">450 <small>₽</small></div></div>
+        <div class="card"><h3>Лопатка</h3><div class="price">350 <small>₽</small></div></div>
+        <div class="card"><h3>Окорок</h3><div class="price">355 <small>₽</small></div></div>
+        <div class="card"><h3>Карбонад</h3><div class="price">395 <small>₽</small></div></div>
+        <div class="card"><h3>Вырезка</h3><div class="price">395 <small>₽</small></div></div>
+        <div class="card"><h3>Чалагач</h3><div class="price">355 <small>₽</small></div></div>
+        <div class="card"><h3>Сало соленое</h3><div class="price">300-460 <small>₽</small></div></div>
+        <div class="card"><h3>Фарш свинина</h3><div class="price">350 <small>₽</small></div></div>
+        <div class="card"><h3>Колбаски для жарки</h3><div class="price">370 <small>₽</small></div></div>
+        <div class="card"><h3>Сало копчёное</h3><div class="price">350 <small>₽</small></div></div>
+        <div class="card"><h3>Щеки копчёные</h3><div class="price">190 <small>₽</small></div></div>
+        <div class="card"><h3>Прослойка соленая</h3><div class="price">410 <small>₽</small></div></div>
+        <div class="card"><h3>Прослойка копчёная</h3><div class="price">450 <small>₽</small></div></div>
+    </div>
+</div>
+
+<div class="container">
+    <h2 class="section-title">Почему выбирают нас</h2>
+    <div class="features">
+        <div class="feature-item"><span class="icon">🥩</span><h4>Свежесть и вкус</h4><p>Мясо не жёсткое, приготовление не займёт много времени</p></div>
+        <div class="feature-item"><span class="icon">🌾</span><h4>Натуральный откорм</h4><p>Без химии, без антибиотиков — всё по-честному</p></div>
+        <div class="feature-item"><span class="icon">🚚</span><h4>Доставка по Омску</h4><p>Быстро привезём в удобное время</p></div>
+        <div class="feature-item"><span class="icon">🔥</span><h4>Копчености и шашлык</h4><p>Готовим сами, маринуем и коптим для вас</p></div>
+    </div>
+</div>
+
+<footer>
+    <a href="tel:+79136223077" class="phone-big">📞 +7 (913) 622-30-77</a>
+    <p>Принимаем заявки в личку и по звонку. Доставка по Омску.</p>
+    <p style="color:#444; margin-top:20px;">© 2026 Мясо Розница</p>
+</footer>
+
+</body>
+  </html>
